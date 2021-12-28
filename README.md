@@ -52,7 +52,7 @@ The code in this repository is based on [oravus/seqNet](https://github.com/oravu
 ```
 
 #### Other Related Projects
-[oravus/seqNet](https://github.com/oravus/seqNet)
+[SeqNet](https://github.com/oravus/seqNet);
 [Delta Descriptors (2020)](https://github.com/oravus/DeltaDescriptors);
 [Patch-NetVLAD (2021)](https://github.com/QVPR/Patch-NetVLAD);
 [CoarseHash (2020)](https://github.com/oravus/CoarseHash);
