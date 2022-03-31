@@ -81,7 +81,7 @@ if __name__ == "__main__":
     if not opt.pooling and opt.resume:
         raise Exception("Please run without the '--resume' argument when '--pooling' is not used.")
 
-    if opt.resume:
+    if opt.resume and not opt.mode == 'test':
         flag_file = join(opt.resume, 'checkpoints', 'flags.json')
         if exists(flag_file):
             with open(flag_file, 'r') as f:
@@ -103,7 +103,7 @@ if __name__ == "__main__":
                 opt = parser.parse_args(train_flags, namespace=opt)
 
     wandb_dataStr = opt.dataset.lower()[:4]
-    wandbResume = False if opt.resume == '' else True
+    wandbResume = False if (opt.resume == '') or (opt.mode == 'test') else True
     wandb.init(project='SeqMatchNet_{}'.format(wandb_dataStr),config=opt,resume=wandbResume)
     # update runName
     runName = wandb.run.name
