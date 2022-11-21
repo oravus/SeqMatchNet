@@ -161,7 +161,7 @@ if __name__ == "__main__":
 
         savePath = join(logdir, opt.savePath)
         makedirs(savePath)
-        makedirs(opt.cachePath)
+        if not exists(opt.cachePath): makedirs(opt.cachePath)
 
         with open(join(savePath, 'flags.json'), 'w') as f:
             f.write(json.dumps({k:v for k,v in opt.items()}))
