@@ -104,7 +104,7 @@ if __name__ == "__main__":
 
     wandb_dataStr = opt.dataset.lower()[:4]
     wandbResume = False if opt.resume == '' or opt.mode == 'test' else True
-    wandb.init(project='SeqMatchNet_{}'.format(wandb_dataStr),config=opt,resume=wandbResume)
+    wandb.init(project='SeqMatchNet_{}'.format(wandb_dataStr),config=opt,resume=wandbResume,anonymous="allow")
     # update runName
     runName = wandb.run.name
     if opt.expName != '' and runName is not None: #runName is None when running wandb offline
