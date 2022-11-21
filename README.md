@@ -16,6 +16,8 @@ conda create -n seqnet numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss t
 
 ### Download
 Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB) <sup>[[b]](#saveLoc)</sup>.
+
+You can download model trained on Oxford from [here](https://cloudstor.aarnet.edu.au/plus/s/y27PHvmZ2xpmcId).
 ## Run
 
 ### Train
