@@ -19,7 +19,7 @@ from train import train
 from test import test
 
 parser = argparse.ArgumentParser(description='SeqMatchNet')
-parser.add_argument('--mode', type=str, required=True, default='train', help='Mode', choices=['train', 'test'])
+parser.add_argument('--mode', type=str, default='train', help='Mode', choices=['train', 'test'])
 
 # train settings
 parser.add_argument('--batchSize', type=int, default=16, help='Number of triplets (query, pos, negs). Each triplet consists of 12 images.')
@@ -57,9 +57,9 @@ parser.add_argument('--predictionsFile', type=str, default=None, help='path to p
 parser.add_argument('--seqL_filterData', type=int, help='during testing, db and qry inds will be removed that violate sequence boundaries for this given sequence length')
 
 # dataset, model etc.
-parser.add_argument('--dataset', type=str, required=True, default='nordland-sw', help='Dataset to use', choices=['nordland-sw', 'nordland-sf', 'oxford-v1.0', 'oxford-pnv'])
+parser.add_argument('--dataset', type=str, default='nordland-sw', help='Dataset to use', choices=['nordland-sw', 'nordland-sf', 'oxford-v1.0', 'oxford-pnv'])
 parser.add_argument('--pooling', action='store_true', help='use a fc layer to learn')
-parser.add_argument('--seqL', type=int, required=True, help='Sequence Length')
+parser.add_argument('--seqL', type=int, help='Sequence Length')
 parser.add_argument('--outDims', type=int, default=4096, help='Output descriptor dimensions')
 parser.add_argument('--margin', type=float, default=0.1, help='Margin for triplet loss. Default=0.1')
 parser.add_argument('--descType', type=str, default="netvlad-pytorch", help='underlying descriptor type')
