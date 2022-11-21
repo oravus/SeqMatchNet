@@ -103,7 +103,7 @@ if __name__ == "__main__":
                 opt = parser.parse_args(train_flags, namespace=opt)
 
     wandb_dataStr = opt.dataset.lower()[:4]
-    wandbResume = False if opt.resume == '' else True
+    wandbResume = False if opt.resume == '' or opt.mode == 'test' else True
     wandb.init(project='SeqMatchNet_{}'.format(wandb_dataStr),config=opt,resume=wandbResume)
     # update runName
     runName = wandb.run.name
